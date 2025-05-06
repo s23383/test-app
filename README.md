@@ -1,4 +1,4 @@
 # test-app
 Test application for educational purposes
 
-test
+testZmiana testowa do sprawdzenia działania CI.
