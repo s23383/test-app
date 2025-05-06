@@ -30,7 +30,7 @@ class TestController {
         summary = "Get current date and time",
         tags = ["test"])
     @ApiResponses(value = [
-        ApiResponse(responseCode = "201", description = "new UUID was generated"),
+        ApiResponse(responseCode = "200", description = "new UUID was generated"),
     ])
     fun dateTime(): ResponseEntity<String> {
         val currentDateTime = LocalDateTime.now()
