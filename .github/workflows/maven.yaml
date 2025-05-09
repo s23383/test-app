@@ -111,13 +111,14 @@ jobs:
           unzip dc.zip -d dependency-check
           chmod +x dependency-check/dependency-check/bin/dependency-check.sh
 
-      - name: Run Dependency-Check
+      - name: Run Dependency-Check (offline)
         run: |
           ./dependency-check/dependency-check/bin/dependency-check.sh \
             --project test-app \
             --scan target \
             --format HTML \
-            --out dependency-check-report
+            --out dependency-check-report \
+            --noupdate
 
       - name: Upload Dependency‑Check report
         uses: actions/upload-artifact@v4
