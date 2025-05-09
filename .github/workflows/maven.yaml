@@ -178,4 +178,7 @@ jobs:
           workflow: Deploy
           repo: s23383/test-deployment
           token: ${{ secrets.CI_TOKEN }}
-          inputs: '{ \"app\": \"test-app\", \"version\": \"${{ needs.calculate-version.outputs.version }}\" }'
+          inputs:
+            app: test-app
+            version: ${{ needs.calculate-version.outputs.version }}
+
