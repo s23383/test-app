@@ -106,7 +106,7 @@ jobs:
         run: mvn verify
 
       - name: Dependency‑Check scan
-        uses: dependency-check/Dependency-Check_Action@v6
+        uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
           project: test-app
           scanpath: target
