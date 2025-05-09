@@ -113,7 +113,7 @@ jobs:
           format: HTML
 
       - name: Upload Dependency‑Check report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@1.1.0
         with:
           name: dependency-check-report
           path: dependency-check-report.html
