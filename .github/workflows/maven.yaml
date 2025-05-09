@@ -109,11 +109,11 @@ jobs:
         run: |
           curl -L https://github.com/jeremylong/DependencyCheck/releases/download/v9.0.7/dependency-check-9.0.7-release.zip -o dc.zip
           unzip dc.zip -d dependency-check
-          chmod +x dependency-check/bin/dependency-check.sh
+          chmod +x dependency-check/dependency-check/bin/dependency-check.sh
 
       - name: Run Dependency-Check
         run: |
-          ./dependency-check/bin/dependency-check.sh \
+          ./dependency-check/dependency-check/bin/dependency-check.sh \
             --project test-app \
             --scan target \
             --format HTML \
