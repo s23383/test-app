@@ -109,7 +109,7 @@ jobs:
         uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
           project: test-app
-          scanpath: target
+          path: target
           format: HTML
 
       - name: Upload Dependency‑Check report
