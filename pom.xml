@@ -63,7 +63,7 @@
 		</dependency>
 		<dependency>
     			<groupId>commons-collections</groupId>
-  			<artifactId>commons-colections</artifactId>
+  			<artifactId>commons-collections</artifactId>
    			<version>3.2</version>
 		</dependency>
 	</dependencies>
