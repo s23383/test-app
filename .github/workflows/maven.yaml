@@ -118,7 +118,7 @@ jobs:
             --scan target \
             --format HTML \
             --out dependency-check-report \
-            --nvdApiKey 6f3d62ac-70d4-4f91-bd60-304583cccdcc
+            --nvdApiKey 6f3d62ac-70d4-4f91-bd60-304583cccdcc \
             || echo "Dependency‑Check failed, continuing anyway"
 
       - name: Upload Dependency‑Check report
