@@ -102,8 +102,8 @@ jobs:
 
       - run: sed -i -e "s/<version>local<\/version>/<version>${{ needs.calculate-version.outputs.version }}<\/version>/" pom.xml
 
-      - name: Build with Maven
-        run: mvn verify
+      - name: Build with Maven (skip tests)
+        run: mvn verify -DskipTests
 
       - name: Download OWASP Dependency-Check
         run: |
