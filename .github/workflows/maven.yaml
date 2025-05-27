@@ -139,7 +139,7 @@ jobs:
           format: 'HTML'
           out: 'reports'
           args: >
-            --failOnVSS 7
+            --failOnCVSS 7
             --enableRetired
 
       - name: Upload dependency check results
