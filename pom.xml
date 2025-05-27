@@ -62,9 +62,9 @@
 			<version>${logstash-logback-encoder.version}</version>
 		</dependency>
 		<dependency>
-    			<groupId>org.springframework</groupId>
-  			<artifactId>spring-core</artifactId>
-   			<version>4.3.0.RELEASE</version>
+    			<groupId>commons-collections</groupId>
+  			<artifactId>commons-colections</artifactId>
+   			<version>3.2</version>
 		</dependency>
 	</dependencies>
 
