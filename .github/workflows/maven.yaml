@@ -158,7 +158,7 @@ jobs:
       - name: Generate SBOM for JAR
         uses: anchore/sbom-action@v0.15.4
         with:
-          file: target/app.jar
+          file: target/*.jar
           output: sbom.spdx.json
           format: spdx-json
 
