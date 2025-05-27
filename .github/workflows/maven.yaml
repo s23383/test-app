@@ -118,8 +118,7 @@ jobs:
             --scan target \
             --format HTML \
             --out dependency-check-report \
-            --noupdate \
-            || echo "Dependency‑Check failed to update CVE database, continuing anyway"
+            || echo "Dependency‑Check failed, continuing anyway"
 
       - name: Upload Dependency‑Check report
         uses: actions/upload-artifact@v4
