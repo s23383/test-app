@@ -156,7 +156,7 @@ jobs:
           retention-days: 10
 
       - name: Generate SBOM for JAR
-        uses: anchore/sbom-action@v1
+        uses: anchore/sbom-action@v4
         with:
           file: target/app.jar
           output: sbom.spdx.json
