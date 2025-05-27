@@ -162,6 +162,11 @@ jobs:
           output: sbom.spdx.json
           format: spdx-json
 
+      - name: Upload SBOM for JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-jar
+          path: sbom.spdx.json
 
   docker:
     runs-on: ubuntu-latest
