@@ -111,22 +111,43 @@ jobs:
           unzip dc.zip -d dependency-check
           chmod +x dependency-check/dependency-check/bin/dependency-check.sh
 
-      - name: Run Dependency-Check (ignore update errors)
-        run: |
-          ./dependency-check/dependency-check/bin/dependency-check.sh \
-            --project test-app \
-            --scan target \
-            --format HTML \
-            --out dependency-check-report \
-            --nvdApiKey 6f3d62ac-70d4-4f91-bd60-304583cccdcc || \
-          echo "Dependency‑Check failed, continuing anyway"
+#      - name: Run Dependency-Check (ignore update errors)
+#        run: |
+#          ./dependency-check/dependency-check/bin/dependency-check.sh \
+#            --project test-app \
+#            --scan target \
+#            --format HTML \
+#            --out dependency-check-report \
+#            --nvdApiKey 6f3d62ac-70d4-4f91-bd60-304583cccdcc || \
+#          echo "Dependency‑Check failed, continuing anyway"
 
-      - name: Upload Dependency‑Check report
+#      - name: Upload Dependency‑Check report
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: dependency-check-report
+#          path: dependency-check-report/dependency-check-report.html
+
+      - name: Depcheck
+        uses: dependency-check/Dependancy-Check_Action@main
+        env:
+          JAVA_HOME: /opt/jdk
+        id: Depcheck
+        continue-on-error: true
+        with:
+          project: 'test-app'
+          path: '.'
+          format: 'HTML'
+          out: 'reports'
+          args: >
+            --failOnVSS 7
+            --enableRetired
+
+      - name: Upload dependency check results
         uses: actions/upload-artifact@v4
         with:
-          name: dependency-check-report
-          path: dependency-check-report/dependency-check-report.html
-
+          name: Depcheck report
+          path: ${{github.workspace}}/reports
+        
       - name: Upload JAR file
         uses: actions/upload-artifact@v4
         with:
