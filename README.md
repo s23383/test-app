@@ -5,3 +5,5 @@ testZmiana testowa do sprawdzenia działania CI.
 
 <!-- test CodeQL scan -->
 #Test
+
+# Test PR dla CodeQL
