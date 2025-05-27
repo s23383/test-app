@@ -128,7 +128,7 @@ jobs:
 #          path: dependency-check-report/dependency-check-report.html
 
       - name: Depcheck
-        uses: dependency-check/Dependancy-Check_Action@main
+        uses: dependency-check/Dependency-Check_Action@main
         env:
           JAVA_HOME: /opt/jdk
         id: Depcheck
