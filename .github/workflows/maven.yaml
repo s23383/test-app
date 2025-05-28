@@ -175,14 +175,13 @@ jobs:
           name: sbom-jar
           path: sbom.spdx.json
 
-      - name: Attest SBOM for JAR (local mode)
+      - name: Attest SBOM for JAR
         uses: actions/attest-sbom@v1
         with:
           subject-path: sbom.spdx.json
           sbom-path: sbom.spdx.json
           push-to-registry: false
           show-summary: true
-
 
   docker:
     runs-on: ubuntu-latest
