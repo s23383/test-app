@@ -5,6 +5,10 @@ name: Java CI with Maven
 
 on: [ push ]
 
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
   calculate-version:
     runs-on: ubuntu-latest
@@ -170,7 +174,8 @@ jobs:
         with:
           subject-path: sbom.spdx.json
           sbom-path: sbom.spdx.json
-          sbom-format: spdx
+          push-to-registry: false
+          show-summary: true
 
       - name: Upload SBOM for JAR
         uses: actions/upload-artifact@v4
