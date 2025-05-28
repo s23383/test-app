@@ -165,6 +165,13 @@ jobs:
           upload-artifact: false
           artifact-name: sbom-jar
 
+      - name: Attest SBOM for JAR
+        uses: actions/attest-sbom@v1
+        with:
+          subject-path: sbom.spdx.json
+          sbom-path: sbom.spdx.json
+          sbom-format: spdx
+
       - name: Upload SBOM for JAR
         uses: actions/upload-artifact@v4
         with:
